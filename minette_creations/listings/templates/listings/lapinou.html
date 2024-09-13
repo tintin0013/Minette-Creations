@@ -1,0 +1,16 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Hello Minette!</h1>
+    <p>Mes Lapinou sont: </p>
+
+    <ul>
+
+        {% for lapinou in crochetLapinou %}
+        <li> {{ lapinou.nom}}</li>
+        {% endfor %}
+    </ul>
+
+    {% endblock %}

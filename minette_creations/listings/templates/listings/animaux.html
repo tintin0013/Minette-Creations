@@ -1,0 +1,14 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Hello Minette!</h1>
+<p>Mes Animaux sont : </p>
+<ul>
+    {% for crochetAnimal in crochetAnimaux %}
+    <li>{{ crochetAnimal.nom}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

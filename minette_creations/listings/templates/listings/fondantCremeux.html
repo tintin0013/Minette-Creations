@@ -1,0 +1,17 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Hello Minette!</h1>
+    <p>Mes Fondants Cremeux sont: </p>
+
+    <ul>
+
+        {% for fondantCremeux in Fondantcremeux %}
+        <!-- <li> {{ lapinou.nom}}</li> -->
+        {% endfor %}
+        <li>Fondant Cremeux</li>
+    </ul>
+
+    {% endblock %}

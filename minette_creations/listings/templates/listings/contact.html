@@ -1,0 +1,17 @@
+
+{% extends 'listings/base.html' %}
+{% block content %}
+<br>
+<h1>Pour nous contacter:</h1>
+<p>Merci de nous contacter par mail à <a href="mailto:contact@minettecreations.com">contact@minettecreations.com</a></p>
+<p>Ou par téléphone au 0123 456 7890</p>
+<p>Merci de nous faire parvenir vos demandes via le formulaire de contact ci-dessous:</p>
+<p>Nous sommes là pour vous aider.</p>
+
+<form action="" method="post" >
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Envoyer">
+</form>
+
+{% endblock %}

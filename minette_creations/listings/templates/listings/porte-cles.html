@@ -1,0 +1,12 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <ul>
+
+        {% for porteCles in crochetPorteCles %}
+                         <li>  {{ porteCles.nom}}</li> 
+                            {% endfor %}
+    </ul>
+    {% endblock %}

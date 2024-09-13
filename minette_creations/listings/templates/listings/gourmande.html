@@ -1,0 +1,17 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Hello Minette!</h1>
+    <p>Mes Bougies Gourmandes sont: </p>
+
+    <ul>
+
+        {% for gourmande in bougieGourmande %}
+        <!-- <li> {{ lapinou.nom}}</li> -->
+        {% endfor %}
+        <li>bougie gourmande</li>
+    </ul>
+
+    {% endblock %}
