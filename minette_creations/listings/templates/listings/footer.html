@@ -1,0 +1,23 @@
+
+{% load static %}
+
+
+{% block footer %}
+
+<div class="footerContainer ">
+    <nav id="footerList">
+        <!-- <div (click)="retour()" class="retour" ><span class="spanRetour" >◀️  RETOUR</span></div>  -->
+        <!-- <a class="retour" href=""><span class="spanRetour" >◀️  RETOUR</span></a>  -->
+        <!--    <img src="../../../assets/logo/ourson.svg" alt="logo" class="logo" /> -->
+        <a href="https://www.facebook.com/people/Minette-Crochette/100093498052236/?locale=fr_FR"><img class="qrFacebook" src="{% static 'assets/logo/facebook.png' %}" alt="logo facebook"></a>
+        <!-- <p>© 2024 Minette Crochette</p> -->
+        <a href="{% url 'contact' %}" class="mail">contact&#64;minettecreations.fr</a>
+        
+        <a href="https://www.instagram.com/minettecrochette/?utm_source=qr"><img class="qrInstagram" src="{% static 'assets/logo/instagram.jpeg' %}" alt="logo instagram"></a>
+    </nav>
+    <div class="aPropos">
+        
+        <a href="{% url 'about' %}" class="infoP2">A propos de Minette </a>
+    </div>
+</div>
+{% endblock %} 

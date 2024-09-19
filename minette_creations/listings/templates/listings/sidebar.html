@@ -1,0 +1,19 @@
+
+{% load static %} 
+
+{% block sidebar %}
+<div class="sider">
+    <div class="SiderContainer ">
+        
+        <a href="{% url 'hello' %}" class="sider2"><h1>Menu</h1></a>
+
+        <div class="menu">
+            <a class="menuSider" href="{% url 'animaux' %}">Animaux</a>
+            <a class="menuSider" href="{% url 'lapinou' %}">Lapinou</a>
+            <a class="menuSider" href="{% url 'doudou' %}">Doudou</a>
+            <a class="menuSider" href="{% url 'porteCles' %}">Porte-Clés</a>
+     </div>
+      </div> 
+
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+.info {
+ 
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+  
+      width: 100%;
+  }
+  .one {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .two {
+      width: 70%;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 80px;
+  }
+  .spanOne {
+      text-align: center;
+      font-size: 40px;
+      color: #cd781e;
+  }
+  
+  .spanTwo {
+      font-size: 30px;
+      color: #8a4c09;
+      text-align: center;
+  }
+  .pOne {
+      font-size: x-large;
+      text-align: center;
+      line-height: 40px;
+      padding-top: 20px;
+  
+  
+  }
+  
+  .pTwo {
+      font-size: x-large;
+      text-align: center;
+      line-height: 40px;
+      padding-bottom: 20px;
+  
+  
+  }

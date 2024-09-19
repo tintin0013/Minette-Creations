@@ -56,7 +56,7 @@ def bruleurs(request):
     return render(request, 'listings/bruleurs.html', {'bruleurs': bruleurs})
 
 def contact(request):
-    return HttpResponse('<h1>Contactez nous</h1> <p>Nous adorons le telephone !</p>')
+    return render(request, 'listings/contact.html')
 
 def about(request):
     return render(request,
@@ -64,6 +64,9 @@ def about(request):
 
 def email_sent(request):
     return render(request, 'listings/email_sent.html')
+
+# def sidebar(request):
+#     return render(request, 'listings/sidebar.html')
 
 
 # def contact(request):
@@ -90,12 +93,5 @@ def email_sent(request):
 #     return render(request,
 #         'listings/contact.html',
 #         {'form': form})
-
-# def crochet(request):
-#     return HttpResponse('<h1>Realisation crochet</h1> <p>voici les realisations au crochet !</p>')
-
-
-# def bougie(request):
-#     return HttpResponse('<h1>Realisation bougie</h1> <p>ici les bougies!</p>')
 
 

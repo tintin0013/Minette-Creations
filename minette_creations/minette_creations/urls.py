@@ -20,19 +20,19 @@ from listings import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.hello),
-    path('animaux/', views.animaux),  # Ajout d'une URL pour la page animaux
-    path('doudou/', views.doudou),  # Ajout d'une URL pour la page doudou
-    path('lapinou/', views.lapinou), # Ajout d'une URL pour la page lapinou
-    path('porte-cles/', views.porteCles),  # Ajout d'une URL pour la page Porte-Cles
+    path('hello/', views.hello, name='hello'),
+    path('animaux/', views.animaux, name='animaux'),  # Ajout d'une URL pour la page animaux
+    path('doudou/', views.doudou, name='doudou'),  # Ajout d'une URL pour la page doudou
+    path('lapinou/', views.lapinou, name='lapinou'), # Ajout d'une URL pour la page lapinou
+    path('porte-cles/', views.porteCles, name='porteCles'),  # Ajout d'une URL pour la page Porte-Cles
     path('artisanale/', views.artisanale), # Ajout d'une URL
     path('gourmande/', views.gourmande),  # Ajout d'une URL pour la page gourmande
     path('fondant/', views.fondant),  # Ajout d'une URL pour la page fondant
     path('fondantCremeux/', views.fondantCremeux), # Ajout d'une URL pour la page fondant Cremeux
     path('bruleurs/', views.bruleurs),  # Ajout d'une URL pour la page bruleurs
 
-    path('about-us/', views.about),  # Ajout d'une URL pour la page A propos
-    path('contact-us/', views.contact),  # Ajout d'une URL pour la page contact
+    path('about-us/', views.about, name='about'),  # Ajout d'une URL pour la page A propos
+    path('contact-us/', views.contact, name='contact'),  # Ajout d'une URL pour la page contact
     path('email_sent/', views.email_sent, name='email_sent'),
     # path('crochet/', views.crochet),
     # path('bougie/', views.bougie),
