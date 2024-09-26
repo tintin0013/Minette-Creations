@@ -1,19 +1,66 @@
-
-{% load static %} 
+{% load static %}
 
 {% block sidebar %}
-<div class="sider">
-    <div class="SiderContainer ">
-        
-        <a href="{% url 'hello' %}" class="sider2"><h1>Menu</h1></a>
-
-        <div class="menu">
-            <a class="menuSider" href="{% url 'animaux' %}">Animaux</a>
-            <a class="menuSider" href="{% url 'lapinou' %}">Lapinou</a>
-            <a class="menuSider" href="{% url 'doudou' %}">Doudou</a>
-            <a class="menuSider" href="{% url 'porteCles' %}">Porte-Clés</a>
-     </div>
-      </div> 
-
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+            etc.
+        </div> -->
+        <div class="btn-group dropend menu">
+            <a class=" dropdown-toggle menuSider" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                Peluche
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class=" menuSider" href="{% url 'animaux' %}">Animaux</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'lapinou' %}">Lapinou</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'doudou' %}">Doudou</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'porteCles' %}">Porte-Clés</a></li>
+            </ul>
+            <a class=" dropdown-toggle menuSider" data-bs-toggle="dropdown" aria-expanded="false">
+                Bougie
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class=" menuSider" href="{% url 'artisanale' %}">Bougie Artisanale</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'gourmande' %}">Bougie Gourmande</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'fondant' %}">Fondant</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'fondantCremeux' %}">Fondant Cremeux</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'bruleurs' %}">Bruleurs</a></li>
+            </ul>
+            <a class=" dropdown-toggle menuSider" data-bs-toggle="dropdown" aria-expanded="false">
+                Deco
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class=" menuSider" href="{% url 'artisanale' %}">Mongolfiere</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'gourmande' %}">Banane</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'fondant' %}">Kiwi</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'fondantCremeux' %}">Tomate</a></li>
+            </ul>
+            <a class=" dropdown-toggle menuSider" data-bs-toggle="dropdown" aria-expanded="false">
+            Saison
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class=" menuSider" href="{% url 'artisanale' %}">Noel</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'gourmande' %}">Paques</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class=" menuSider" href="{% url 'fondant' %}">St Patrick</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -14,9 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
+from django.contrib import admin
 from listings import views  
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,15 +28,15 @@ urlpatterns = [
     path('doudou/', views.doudou, name='doudou'),  # Ajout d'une URL pour la page doudou
     path('lapinou/', views.lapinou, name='lapinou'), # Ajout d'une URL pour la page lapinou
     path('porte-cles/', views.porteCles, name='porteCles'),  # Ajout d'une URL pour la page Porte-Cles
-    path('artisanale/', views.artisanale), # Ajout d'une URL
-    path('gourmande/', views.gourmande),  # Ajout d'une URL pour la page gourmande
-    path('fondant/', views.fondant),  # Ajout d'une URL pour la page fondant
-    path('fondantCremeux/', views.fondantCremeux), # Ajout d'une URL pour la page fondant Cremeux
-    path('bruleurs/', views.bruleurs),  # Ajout d'une URL pour la page bruleurs
+    path('artisanale/', views.artisanale, name='artisanale'), # Ajout d'une URL
+    path('gourmande/', views.gourmande, name='gourmande'),  # Ajout d'une URL pour la page gourmande
+    path('fondant/', views.fondant, name='fondant'),  # Ajout d'une URL pour la page fondant
+    path('fondantCremeux/', views.fondantCremeux, name='fondantCremeux'), # Ajout d'une URL pour la page fondant Cremeux
+    path('bruleurs/', views.bruleurs, name='bruleurs'),  # Ajout d'une URL pour la page bruleurs
 
     path('about-us/', views.about, name='about'),  # Ajout d'une URL pour la page A propos
     path('contact-us/', views.contact, name='contact'),  # Ajout d'une URL pour la page contact
     path('email_sent/', views.email_sent, name='email_sent'),
-    # path('crochet/', views.crochet),
+    path('<str:categorie>/<int:id>/', views.afficher_image, name='afficher_image'),    # path('crochet/', views.crochet),
     # path('bougie/', views.bougie),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

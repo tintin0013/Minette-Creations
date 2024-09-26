@@ -1,0 +1,24 @@
+{% load static %}
+
+
+{% block header %}
+
+<div id="header">
+    <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2 swing-rotate2" />
+    <p class="pHeader">MINETTE</p>
+
+    {% block carroussel %}
+    {% include 'listings/carroussel.html' %}
+    {% endblock %}
+
+    <p class="pHeader">CREATIONS</p>
+    <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2 swing-rotate" />
+</div>
+
+<div class="lienMenu">
+    <a class="sider2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" href="#offcanvasExample" role="button" aria-controls="offcanvasWithBothOptions">
+        <h1>Menu</h1>
+    </a>
+</div>
+
+{% endblock %}

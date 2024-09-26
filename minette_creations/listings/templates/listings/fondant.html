@@ -2,16 +2,22 @@
 {% extends 'listings/index.html' %}
 
 {% block content %}
-
-    <h1>Hello Minette!</h1>
-    <p>Mes Fondants sont: </p>
-
-    <ul>
-
-        {% for fondant in Fondant %}
-        <!-- <li> {{ lapinou.nom}}</li> -->
-        {% endfor %}
-        <li>Fondant</li>
-    </ul>
-
+<section class="card">
+    {% for fondant in tous_objets %}
+      <div id="produit">
+          <div class="detailCard">
+            <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'fondant' fondant.id %}">{{ fondant.nom }}</a></h3>
+              <p class="pcard">Description: <span class="cardSpan">{{ fondant.description }}</span></p>
+              <p class="pcard">Couleur: <span class="cardSpan">{{ fondant.couleur }}</span></p>
+              <p class="pcard">Taille: <span class="cardSpan">{{ fondant.taille }}</span></p>
+              <p class="pcard">Matière: <span class="cardSpan">{{ fondant.matiere }}</span></p>
+          </div>
+          <div class="imgCard">
+              <a href="{% url 'afficher_image' 'fondant' fondant.id %}"> <img class="image" src="data:image/JPG;base64,{{ fondant.image_base64 }}" alt="{{ fondant.nom }}" /></a>
+          </div>
+      </div>
+      {% empty %}
+      <p>Aucun animal trouvé.</p>
+      {% endfor %}
+  </section>
     {% endblock %}

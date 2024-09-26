@@ -2,16 +2,22 @@
 {% extends 'listings/index.html' %}
 
 {% block content %}
-
-    <h1>Hello Minette!</h1>
-    <p>Mes Bougies Artisanales sont: </p>
-
-    <ul>
-
-        {% for artisanale in bougieArtisanale %}
-        <!-- <li> {{ lapinou.nom}}</li> -->
-        {% endfor %}
-        <li>bougie artisanale</li>
-    </ul>
-
+<section class="card">
+  {% for artisanale in tous_objets %}
+    <div id="produit">
+        <div class="detailCard">
+            <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'artisanale' artisanale.id %}">{{ artisanale.nom }}</a></h3>
+            <p class="pcard">Description: <span class="cardSpan">{{ artisanale.description }}</span></p>
+            <p class="pcard">Couleur: <span class="cardSpan">{{ artisanale.couleur }}</span></p>
+            <p class="pcard">Taille: <span class="cardSpan">{{ artisanale.taille }}</span></p>
+            <p class="pcard">Matière: <span class="cardSpan">{{ artisanale.matiere }}</span></p>
+        </div>
+        <div class="imgCard">
+            <a href="{% url 'afficher_image' 'artisanale' artisanale.id %}"> <img class="image" src="data:image/JPG;base64,{{ artisanale.image_base64 }}" alt="{{ artisanale.nom }}" /></a>
+        </div>
+    </div>
+    {% empty %}
+    <p>Aucun animal trouvé.</p>
+    {% endfor %}
+</section>
     {% endblock %}

@@ -2,11 +2,22 @@
 {% extends 'listings/index.html' %}
 
 {% block content %}
-
-    <ul>
-
-        {% for porteCles in crochetPorteCles %}
-                         <li>  {{ porteCles.nom}}</li> 
-                            {% endfor %}
-    </ul>
+<section class="card">
+   {% for crochetPorteCles in tous_objets %}
+    <div id="produit">
+        <div class="detailCard">
+            <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'crochetportecles' crochetPorteCles.id %}">{{ crochetPorteCles.nom }}</a></h3>
+            <p class="pcard">Description: <span class="cardSpan">{{ crochetPorteCles.description }}</span></p>
+            <p class="pcard">Couleur: <span class="cardSpan">{{ crochetPorteCles.couleur }}</span></p>
+            <p class="pcard">Taille: <span class="cardSpan">{{ crochetPorteCles.taille }}</span></p>
+            <p class="pcard">Matière: <span class="cardSpan">{{ crochetPorteCles.matiere }}</span></p>
+        </div>
+        <div class="imgCard">
+            <a href="{% url 'afficher_image' 'crochetportecles' crochetPorteCles.id %}"> <img class="image" src="data:image/JPG;base64,{{ crochetPorteCles.image_base64 }}" alt="{{ crochetPorteCles.nom }}" /></a>
+        </div>
+    </div>
+    {% empty %}
+    <p>Aucun animal trouvé.</p>
+    {% endfor %}
+</section>
     {% endblock %}

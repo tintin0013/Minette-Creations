@@ -7,6 +7,7 @@ class CrochetAnimaux(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     matiere = models.fields.CharField(max_length=20)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -17,6 +18,7 @@ class CrochetDoudou(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     matiere = models.fields.CharField(max_length=20)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -26,6 +28,7 @@ class CrochetLapinou(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     matiere = models.fields.CharField(max_length=20)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -35,6 +38,7 @@ class CrochetPorteCles(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     matiere = models.fields.CharField(max_length=20)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -45,6 +49,7 @@ class BougieArtisanale(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     forme = models.fields.CharField(max_length=50)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -54,6 +59,7 @@ class BougieGourmande(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     forme = models.fields.CharField(max_length=50)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -63,6 +69,7 @@ class Fondant(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     forme = models.fields.CharField(max_length=50)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -72,6 +79,7 @@ class FondantCremeux(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     forme = models.fields.CharField(max_length=50)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'
 
@@ -81,5 +89,6 @@ class Bruleurs(models.Model):
     couleur = models.fields.CharField(max_length=20)
     taille = models.fields.CharField(max_length=20)
     forme = models.fields.CharField(max_length=50)
+    image_base64 = models.TextField() 
     def __str__(self):
         return f'{self.nom}'

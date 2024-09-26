@@ -2,16 +2,22 @@
 {% extends 'listings/index.html' %}
 
 {% block content %}
-
-    <h1>Hello Minette!</h1>
-    <p>Mes Bruleurs sont: </p>
-
-    <ul>
-
-        {% for bruleur in Bruleurs %}
-        <!-- <li> {{ lapinou.nom}}</li> -->
-        {% endfor %}
-        <li>Bruleurs</li>
-    </ul>
-
+<section class="card">
+    {% for bruleur in tous_objets %}
+      <div id="produit">
+          <div class="detailCard">
+            <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'bruleur' bruleur.id %}">{{ bruleur.nom }}</a></h3>
+              <p class="pcard">Description: <span class="cardSpan">{{ bruleur.description }}</span></p>
+              <p class="pcard">Couleur: <span class="cardSpan">{{ bruleur.couleur }}</span></p>
+              <p class="pcard">Taille: <span class="cardSpan">{{ bruleur.taille }}</span></p>
+              <p class="pcard">Matière: <span class="cardSpan">{{ bruleur.matiere }}</span></p>
+          </div>
+          <div class="imgCard">
+              <a href="{% url 'afficher_image' 'bruleur' bruleur.id %}"> <img class="image" src="data:image/JPG;base64,{{ bruleur.image_base64 }}" alt="{{ bruleur.nom }}" /></a>
+          </div>
+      </div>
+      {% empty %}
+      <p>Aucun animal trouvé.</p>
+      {% endfor %}
+  </section>
     {% endblock %}

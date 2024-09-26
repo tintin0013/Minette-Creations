@@ -2,13 +2,24 @@
 {% extends 'listings/index.html' %}
 
 {% block content %}
-
-    <h1>Hello Minette!</h1>
-    <p>Mes Doudous sont:</p>
-    <ul>
-
-        {% for doudou in crochetDoudou %}
-        <li> {{ doudou.nom}} </li>
-        {% endfor %}
-    </ul>
+<section class="card">
+    <!-- <h2>Liste des Animaux</h2>
+    <p>Nombre d'animaux : {{ tous_objets.count }}</p>  Afficher le nombre d'objets -->
+    {% for crochetDoudou in tous_objets %}
+    <div id="produit">
+        <div class="detailCard">
+            <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'crochetdoudou' crochetDoudou.id %}">{{ crochetDoudou.nom }}</a></h3>
+            <p class="pcard">Description: <span class="cardSpan">{{ crochetDoudou.description }}</span></p>
+            <p class="pcard">Couleur: <span class="cardSpan">{{ crochetDoudou.couleur }}</span></p>
+            <p class="pcard">Taille: <span class="cardSpan">{{ crochetDoudou.taille }}</span></p>
+            <p class="pcard">Matière: <span class="cardSpan">{{ crochetDoudou.matiere }}</span></p>
+        </div>
+        <div class="imgCard">
+            <a href="{% url 'afficher_image' 'crochetdoudou' crochetDoudou.id %}"> <img class="image" src="data:image/JPG;base64,{{ crochetDoudou.image_base64 }}" alt="{{ crochetDoudou.nom }}" /></a>
+        </div>
+    </div>
+    {% empty %}
+    <p>Aucun animal trouvé.</p>
+    {% endfor %}
+</section>
     {% endblock %}

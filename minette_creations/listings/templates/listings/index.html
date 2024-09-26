@@ -1,66 +1,77 @@
 {% load static %}
 
 <html>
-    <head>
-        <title>Minette Creations</title>
-        <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
-        <link rel="stylesheet" href="{% static 'listings/about.css' %}" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="header">
-            <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2" />
-          <p class="pHeader" >MINETTE</p>
-          <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo" />
-          <p class="pHeader">CREATIONS</p>
-          <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2" />
-        </div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- <div class="sider">
-            <div class="SiderContainer ">
-                
-                <a href="{% url 'hello' %}" class="sider2"><h1>Menu</h1></a>
-        
-                <div class="menu">
-                    <a class="menuSider" href="{% url 'animaux' %}">Animaux</a>
-                    <a class="menuSider" href="{% url 'lapinou' %}">Lapinou</a>
-                    <a class="menuSider" href="{% url 'doudou' %}">Doudou</a>
-                    <a class="menuSider" href="{% url 'porteCles' %}">Porte-Clés</a>
-             </div>
-              </div> 
-        
-        </div> -->
+    <title>Minette Creations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-        {% block sidebar %}
-        {% include 'listings/sidebar.html' %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'about.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+
+
+    {% block header %}
+    {% include 'listings/header.html' %}
     {% endblock %}
-        
-        {% block content %}
-        {% endblock %} 
+    <!-- <div id="header">
+        <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2" />
+        <p class="pHeader">MINETTE</p>
+        <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo" />
+        <p class="pHeader">CREATIONS</p>
+        <img src="{% static 'assets/logo/ourson.svg' %}" alt="logo" class="logo2" />
+    </div> -->
 
-        {% block footer %}
-        {% include 'listings/footer.html' %}
-     {% endblock %} 
-<!-- 
-        <div class="footerContainer ">
-            <nav id="footerList">
-                <div (click)="retour()" class="retour" ><span class="spanRetour" >◀️  RETOUR</span></div> 
-                <a class="retour" href=""><span class="spanRetour" >◀️  RETOUR</span></a> 
-                   <img src="../../../assets/logo/ourson.svg" alt="logo" class="logo" />
-                <a href="https://www.facebook.com/people/Minette-Crochette/100093498052236/?locale=fr_FR"><img class="qrFacebook" src="../../static/assets/logo/facebook.png" alt="logo facebook"></a>
-                <p>© 2024 Minette Crochette</p>
-                <a href="{% url 'contact' %}" class="mail">contact&#64;minettecreations.fr</a>
-        
-                <a href="https://www.instagram.com/minettecrochette/?utm_source=qr"><img class="qrInstagram" src="../../static/assets/logo/instagram.jpeg" alt="logo instagram"></a>
-            </nav>
-            <div class="aPropos">
+   
+  
+              
 
-                <a href="{% url 'about' %}" class="infoP2">A propos de Minette </a>
-            </div>
-          </div> -->
 
-    </body>
+                    <div class="container">
+                     
+    
+                        {% block sidebar %}
+                    {% include 'listings/sidebar.html' %}
+                    {% endblock %}
+                    
+                    {% block content %}
+                    
+                    {% endblock %}
+                    </div>
+                   
+
+
+
+              
+   
+             
+
+
+
+   
+
+ 
+
+   
+
+    {% block footer %}
+    {% include 'listings/footer.html' %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
 </html>
