@@ -1,8 +1,32 @@
 
 {% extends 'listings/index.html' %}
 
+{% load static %}
+
 {% block content %}
 
-    <h1>Hello Minette!</h1>
-    <h2>Mes Creations</h2>
+<div class="info">
+
+    
+    <div class="one">
+        <span class="spanOne">Bienvenue dans l’univers féérique de Minette Créations  </span> 
+        <p class="pOne">Spécialisée dans l’art du crochet, je crée des doudous, hochets et peluches doux pour les tout-petits, ainsi que des œuvres uniques pour les plus grands.<br>
+             Mon savoir-faire s’étend également à la création de bougies artisanales, gourmandes et fondantes, qui apportent chaleur et parfum à chaque moment.</p>
+    </div>
+    <div class="two">
+        <p class="pTwo">Pour rendre vos événements inoubliables, je propose des créations personnalisées pour naissances, baptêmes et mariages, alliant tendresse et authenticité.</p>
+            <span class="spanTwo">Minette Créations, là où la passion devient poésie.</span> 
+            <span class="spanThree"> Cliquez sur <a class="siderHello hello2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" href="#offcanvasExample" role="button" aria-controls="offcanvasWithBothOptions">
+                <h1 class="menu1 ">✨Menu✨</h1>
+                <img src="{% static 'assets/logo/hamburger-menu.svg' %}" alt="logo" class="menu2" />
+
+                
+        
+            </a> et plongez dans la féerie !  </span> 
+
+    </div>
+
+   
+    
+</div>
     {% endblock %}

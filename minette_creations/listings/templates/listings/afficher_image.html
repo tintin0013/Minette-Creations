@@ -6,10 +6,14 @@
     <div id="produit2">
         <div class="detailCard2">
             <h2>{{ objet.nom }}</h2>
-            <p class="pcard">Description: <span class="cardSpan"> {{ objet.description }}</span></p>
-            <p class="pcard">Couleur: <span class="cardSpan"> {{ objet.couleur }}</span></p>
-            <p class="pcard">Taille: <span class="cardSpan"> {{ objet.taille }}</span></p>
-            <p class="pcard">Matière: <span class="cardSpan"> {{ objet.matiere }}</span></p>
+            <div class="titreDetail">
+                <p class="pcard ">Description: </p>
+                
+                <span class="cardSpan"> {{ objet.description }}</span>
+            </div>
+            <p class=" pcard ">Couleur: <span class="cardSpan"> {{ objet.couleur }}</span></p>
+            <p class="pcard ">Taille: <span class="cardSpan"> {{ objet.taille }}</span></p>
+            <p class="pcard ">Matière: <span class="cardSpan"> {{ objet.matiere }}</span></p>
         </div>  
         <div class="imgCard">
             <img class="image2" src="data:image/jpeg;base64,{{ objet.image_base64 }}" alt="{{ objet.nom }}" /> 

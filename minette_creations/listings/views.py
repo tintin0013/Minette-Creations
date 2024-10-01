@@ -5,12 +5,12 @@ from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from django.shortcuts import redirect 
 from listings.models import CrochetAnimaux, CrochetDoudou, CrochetLapinou, CrochetPorteCles, BougieArtisanale,BougieGourmande, Fondant, FondantCremeux,Bruleurs
-# from listings.forms import ContactUsForm, BandForm, ListingForm
+from listings.forms import ContactUsForm
 
 
 def hello(request):
-    crochetsAnimaux = CrochetAnimaux.objects.all()
-    return render(request, 'listings/hello.html')
+    return render(request,
+                  'listings/hello.html')
 
 
 def animaux(request):
@@ -58,7 +58,24 @@ def bruleurs(request):
     return render(request, 'listings/bruleurs.html', {'tous_objets': tous_objets})
 
 def contact(request):
-    return render(request, 'listings/contact.html')
+   if request.method == 'POST':
+     # créer une instance de notre formulaire et le remplir avec les données POST
+       form = ContactUsForm(request.POST)
+       if form.is_valid():
+            send_mail(
+            subject=f'Message from {form.cleaned_data["name"] or "anonyme"} via Minette Créations Contact Us form',
+            message=form.cleaned_data['message'],
+            from_email=form.cleaned_data['email'],
+            recipient_list=['admin@minetteCreations.fr'],
+        )
+       return redirect('email_sent')  # ajoutez cette instruction de retour
+   else:
+ # ceci doit être une requête GET, donc créer un formulaire vide
+       form = ContactUsForm()
+
+   return render(request,
+        'listings/contact.html',
+        {'form': form})
 
 def about(request):
     return render(request,

@@ -1,12 +1,14 @@
 
 {% extends 'listings/index.html' %}
 {% block content %}
+<div class="emailSend">
 
-<h1>Votre e-mail a bien été envoyé</h1>
-<br>
-<p>Nous mettons tout en oeuvre pour vous repndre dans les plus brefs delais</p>
-<br>
-<a href="{% url 'band_list' %}">Retour</a>
+    <h1>Votre e-mail a bien été envoyé</h1>
+    <br>
+    <p>Nous mettons tout en oeuvre pour vous repndre dans les plus brefs delais</p>
+    <br>
+    <a href="{% url 'hello' %}">Retour</a>
+</div>
 
 
 {% endblock %}

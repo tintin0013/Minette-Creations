@@ -8,10 +8,10 @@
     <div id="produit">
         <div class="detailCard">
             <h3 class="Hcard"><a class="Acard" href="{% url 'afficher_image' 'crochetanimaux' crochetAnimal.id %}">{{ crochetAnimal.nom }}</a></h3>
-            <p class="pcard">Description: <span class="cardSpan">{{ crochetAnimal.description }}</span></p>
-            <p class="pcard">Couleur: <span class="cardSpan">{{ crochetAnimal.couleur }}</span></p>
+            <p class="pcard"> <span class="cardSpan">{{ crochetAnimal.description }}</span></p>
+            <!-- <p class="pcard">Couleur: <span class="cardSpan">{{ crochetAnimal.couleur }}</span></p>
             <p class="pcard">Taille: <span class="cardSpan">{{ crochetAnimal.taille }}</span></p>
-            <p class="pcard">Matière: <span class="cardSpan">{{ crochetAnimal.matiere }}</span></p>
+            <p class="pcard">Matière: <span class="cardSpan">{{ crochetAnimal.matiere }}</span></p> -->
         </div>
         <div class="imgCard">
             <a href="{% url 'afficher_image' 'crochetanimaux' crochetAnimal.id %}"> <img class="image" src="data:image/JPG;base64,{{ crochetAnimal.image_base64 }}" alt="{{ crochetAnimal.nom }}" /></a>
